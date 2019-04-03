@@ -2,7 +2,7 @@
 DROP TABLE customer;
 DROP TABLE movies;
 DROP TABLE cinemas;
-DROP TABLE movies_showing;
+DROP TABLE showing;
 DROP TABLE credit_card;
 DROP TABLE booking;
 DROP TABLE ticket;
@@ -27,13 +27,13 @@ CREATE TABLE movies (
 );
 
 CREATE TABLE cinemas(
-	cinema_id int(10) primary key,
+	cinema_id int(10) auto_increment primary key,
 	name varchar(255) not null,
 	seats int(10) not null
 );
 
-CREATE TABLE movies_showing (
-	movies_showing_id int(10) auto_increment primary key,
+CREATE TABLE showing (
+	showing_id int(10) auto_increment primary key,
 	movie_id int(10) not null,
 	cinema_id int(10) not null,
 	showing_from date not null,
@@ -43,19 +43,19 @@ CREATE TABLE movies_showing (
 );
 
 CREATE TABLE credit_card (
-	credit_card_id int(25) primary key,
+	credit_card_id int(10) auto_increment primary key,
 	name varchar(100) not null,
 	card_number int(25) not null,
 	card_type varchar(255) not null,
 	exp_date date not null,
 	card_code int(3) not null,
-	customer_id int(10) auto_increment not null,
+	customer_id int(10) not null,
 	foreign key (customer_id) references customer(customer_id)
 );
 
 CREATE TABLE booking (
-	booking_id int(10) primary key,
-	customer_id int(10) auto_increment not null,
+	booking_id int(10) auto_increment primary key,
+	customer_id int(10) not null,
 	movie_id int(10)  not null,
 	seat_quantity int(10) not null,
 	foreign key (customer_id) references customer(customer_id),
@@ -63,7 +63,7 @@ CREATE TABLE booking (
 );
 
 CREATE TABLE ticket (
-	ticket_id int(10) primary key,
+	ticket_id int(10) auto_increment primary key,
 	price float(5,2) not null,
 	movie_id int(10) not null,
 	foreign key (movie_id) references movies(movie_id)
