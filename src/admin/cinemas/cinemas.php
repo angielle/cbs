@@ -24,14 +24,14 @@
       </div>
 
       <!-- Form -->
-      <form action="cinemas.php" method="POST">
+      <form action="cinemas_pr.php" method="POST">
         <div class="modal-body">
 				  <div class="form-group">
 				    <label>Name</label>
 				    <input type="text" name="name" class="form-control"  placeholder="Enter Name">
 				  </div>
 				  <div class="form-group">
-				    <label>Genre</label>
+				    <label>Seats</label>
 				    <input type="text" name="seats" class="form-control"  placeholder="Enter Seats">
 				  </div>
       </div>
@@ -44,6 +44,65 @@
   </div>
 </div>
 <!-- End add modal -->
+
+<!-- Edit modal -->
+<div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Movie</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <!-- form -->
+      <form action="cinemas_pr.php" method="POST">
+      <div class="modal-body">
+        <input type="hidden" name="update_id" id="update_id">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" name="name" id="name" class="form-control"  placeholder="Enter Name">
+        </div>
+        <div class="form-group">
+          <label>Seats</label>
+          <input type="text" name="seats" id="seats" class="form-control"  placeholder="Enter Seats">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" name="update_data" class="btn btn-primary">Update</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- End edit modal -->
+
+<!-- Delete Modal -->
+<div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete Movie</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!-- form -->
+      <form action="cinemas_pr.php" method="POST">
+      <div class="modal-body">
+      			<input type="hidden" name="delete_id" id="delete_id">
+				<h4>Do you want to delete this movie?</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">NO</button>
+        <button type="submit" name="delete_data" class="btn btn-danger">Yes, <strong>DELETE</strong> it.</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 <body id="page-top">
   <div id="wrapper">
@@ -77,7 +136,7 @@
           <ul class="navbar-nav ml-auto">
             <div class="topbar-divider d-none d-sm-block"></div>
             <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link" href="../users/logout.php">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Logout</span>
               </a>
             </li>
@@ -114,13 +173,15 @@
                           <th scope="col">Id</th>
                           <th scope="col">Name</th>
                           <th scope="col">Seats</th>
+                          <th scope="col">Edit</th>
+                          <th scope="col">Delete</th>
                         </tr>
                       </thead>
                       <?php 
                         while ($row = $res->fetch_assoc()) {
                           $id = $row['cinema_id'];
                           $name = $row['name'];
-                          $genre = $row['seats'];
+                          $seats = $row['seats'];
 
                       ?>
                       <tbody>
@@ -129,10 +190,10 @@
                           <td><?php echo $name; ?></td>
                           <td><?php echo $seats; ?></td>
                           <td>
-                            <button type="button" class="btn btn-success edit_user">Edit</button>
+                            <button type="button" class="btn btn-success edit">Edit</button>
                           </td>
                           <td>
-                            <button type="button" class="btn btn-danger">Delete</button>
+                            <button type="button" class="btn btn-danger delete">Delete</button>
                           </td>
                         </tr>
                         <?php 
@@ -150,15 +211,42 @@
     </div>
   </div>
 
-<!-- Bootstrap core JavaScript-->
-<script src="../../../assets/fontawesome/fontawesome.js"></script>
-<script src="../../../assets/jquery/jquery.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
-
-
 </body>
+
+<!-- Bootstrap core JavaScript-->
+<script src="../../../assets/js/fontawesome.js"></script>
+<script src="../../../assets/jquery/jquery.js"></script>
+<script src="../../../assets/js/popper.js"></script>
+<script src="../../../assets/js/bootstrap.js"></script>
+<script src="../../../assets/jquery/dataTables.js"></script>
+<script src="../../../assets/js/dataTables.js"></script>
+
+<script>
+	$(document).ready(function(){
+		$('.delete').on('click',function(){
+			$('#deletemodal').modal('show');
+				$tr = $(this).closest('tr');
+				var data = $tr.children("td").map(function(){
+					return $(this).text();
+				}).get();
+				console.log(data);
+				$('#delete_id').val(data[0]);
+		});
+	});
+
+	$(document).ready(function(){
+		$('.edit').on('click',function(){
+			$('#editmodal').modal('show');
+				$tr = $(this).closest('tr');
+				var data = $tr.children("td").map(function(){
+					return $(this).text();
+				}).get();
+				console.log(data);
+				$('#update_id').val(data[0]);
+				$('#name').val(data[1]);
+				$('#seats').val(data[2]);
+		});
+	});
+</script>
 
 </html>

@@ -112,6 +112,31 @@
 </div>
 <!-- End edit modal -->
 
+<!-- Delete Modal -->
+<div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete User</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!-- form -->
+      <form action="movies_pr.php" method="POST">
+      <div class="modal-body">
+      			<input type="hidden" name="delete_id" id="delete_id">
+				<h4>Do you want to delete this user?</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">NO</button>
+        <button type="submit" name="delete_data" class="btn btn-danger">Yes, <strong>DELETE</strong> it.</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 
 <body id="page-top">
   
@@ -147,12 +172,9 @@
           <ul class="navbar-nav ml-auto">
             <div class="topbar-divider d-none d-sm-block"></div>
             <li class="nav-item dropdown no-arrow">
-              <a class="nav=link" href="users/logout.php">
+              <a class="nav-link" href="users/logout.php">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Logout</span>
               </a>
-              <!-- <a class="nav-link dropdown-toggle" href="users/logout.php" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
-                <!-- <span class="mr-2 d-none d-lg-inline text-gray-600 small">Logout</span> -->
-              <!-- </a> -->
             </li>
           </ul>
         </nav>
@@ -258,7 +280,7 @@
 <script>
   // Delete
 	$(document).ready(function(){
-		$('.deletebtn').on('click',function(){
+		$('.delete').on('click',function(){
 			$('#deletemodal').modal('show');
 				$tr = $(this).closest('tr');
 				var data = $tr.children("td").map(function(){

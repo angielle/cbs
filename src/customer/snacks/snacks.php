@@ -62,8 +62,9 @@
 	</div>
 </div>
 
+</body>
+
 <!--- Footer -->
 <?php include '../../includes/footer.php'; ?>
 <script src="../../../assets/js/bootstrap.js"></script>
-</body>
 </html>

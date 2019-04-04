@@ -9,16 +9,12 @@ if(isset($_POST['insert_data'])){
 	$synopsis = $_POST['synopsis'];
 	$length = $_POST['length'];
 	$mysqli->query("INSERT INTO movies (`name`,`genre`,`year`,`synopsis`,`length`) VALUES('$name','$genre','$year','$synopsis','$length')") or die($mysqli->error);
-	$_SESSION['message'] = "Record has been saved!";
-	$_SESSION['msg_type'] = "success";
 	header("location: movies.php");
 }
 
 if(isset($_POST['delete_data'])){
 	$id = $_POST['delete_id'];
 	$mysqli->query("DELETE FROM movies WHERE movie_id=$id") or die($mysqli->error());
-	$_SESSION['message'] = "Record has been deleted!";
-	$_SESSION['msg_type'] = "danger";
 	header("location: movies.php");
 }
 
@@ -29,9 +25,7 @@ if(isset($_POST['update_data'])){
 	$year = $_POST['year'];
 	$synopsis = $_POST['synopsis'];
 	$length = $_POST['length'];
-	$mysqli->query("UPDATE movies SET name='$name', genre='$genre', year='$year', synopsis='$synopsis', length='$length' WHERE movie_id='$id'") or die($mysqli->error) ;
-	$_SESSION['message'] = "Record has been updated!";
-	$_SESSION['msg_type'] = "warning";
+	$mysqli->query("UPDATE movies SET name='$name', genre='$genre', year='$year', synopsis='$synopsis', length='$length' WHERE movie_id='$id'") or die($mysqli->error) ;;
 	header("location: movies.php");
 }
 ?>

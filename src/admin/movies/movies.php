@@ -103,6 +103,31 @@
 </div>
 <!-- End edit modal -->
 
+<!-- Delete Modal -->
+<div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete Movie</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!-- form -->
+      <form action="movies_pr.php" method="POST">
+      <div class="modal-body">
+      			<input type="hidden" name="delete_id" id="delete_id">
+				<h4>Do you want to delete this movie?</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">NO</button>
+        <button type="submit" name="delete_data" class="btn btn-danger">Yes, <strong>DELETE</strong> it.</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 <body id="page-top">
   <div id="wrapper">
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion">
@@ -135,7 +160,7 @@
           <ul class="navbar-nav ml-auto">
             <div class="topbar-divider d-none d-sm-block"></div>
             <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link" href="../users/logout.php">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Logout</span>
               </a>
             </li>
@@ -201,7 +226,7 @@
                             <button type="button" class="btn btn-success edit">Edit</button>
                           </td>
                           <td>
-                            <button type="button" class="btn btn-danger">Delete</button>
+                            <button type="button" class="btn btn-danger delete">Delete</button>
                           </td>
                         </tr>
                         <?php 
@@ -222,12 +247,12 @@
 </body>
 
 <!-- Bootstrap core JavaScript-->
-<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+<script src="../../../assets/js/fontawesome.js"></script>
+<script src="../../../assets/jquery/jquery.js"></script>
+<script src="../../../assets/js/popper.js"></script>
+<script src="../../../assets/js/bootstrap.js"></script>
+<script src="../../../assets/jquery/dataTables.js"></script>
+<script src="../../../assets/js/dataTables.js"></script>
 
 <script>
 	$(document).ready(function(){
