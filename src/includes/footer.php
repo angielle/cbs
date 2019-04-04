@@ -1,7 +1,7 @@
 <!--- Footer -->
 <footer>
 	<?php 
-	$logo = SCRIPT_ROOT . "assets/img/logo.png"; 
+		$logo = SCRIPT_ROOT . "assets/img/logo.png"; 
 	?>
 
 	<div class="container-fluid padding">

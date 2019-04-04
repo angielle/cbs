@@ -122,11 +122,6 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="../showing/showing.php">
-          <span>Movies Showing</span></a>
-      </li>
-
-      <li class="nav-item">
         <a class="nav-link" href="../cinemas/cinemas.php">
           <span>Cinemas</span></a>
       </li>

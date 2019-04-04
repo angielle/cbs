@@ -3,10 +3,10 @@
 <?php 
   define( 'SCRIPT_ROOT', 'http://localhost/cbs/' );
   $logo = SCRIPT_ROOT . "assets/img/logo.png"; 
-  $home = SCRIPT_ROOT . "src/index.php"; 
-  $movies = SCRIPT_ROOT . "src/movies.php";
-  $snacks = SCRIPT_ROOT . "src/snacks.php";
-  $about =  SCRIPT_ROOT . "src/about.php";
+  $home = SCRIPT_ROOT . "index.php"; 
+  $movies = SCRIPT_ROOT . "src/customer/movies.php";
+  $snacks = SCRIPT_ROOT . "src/customer/snacks.php";
+  $about =  SCRIPT_ROOT . "src/customer/about.php";
   $sign =  SCRIPT_ROOT . "src/guest/login.php";
   $register =  SCRIPT_ROOT . "src/guest/register.php";
 ?>

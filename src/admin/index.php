@@ -134,11 +134,6 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="showing/showing.php">
-          <span>Movies Showing</span></a>
-      </li>
-
-      <li class="nav-item">
         <a class="nav-link" href="cinemas/cinemas.php">
           <span>Cinemas</span></a>
       </li>
@@ -152,9 +147,12 @@
           <ul class="navbar-nav ml-auto">
             <div class="topbar-divider d-none d-sm-block"></div>
             <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav=link" href="users/logout.php">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Logout</span>
               </a>
+              <!-- <a class="nav-link dropdown-toggle" href="users/logout.php" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+                <!-- <span class="mr-2 d-none d-lg-inline text-gray-600 small">Logout</span> -->
+              <!-- </a> -->
             </li>
           </ul>
         </nav>
