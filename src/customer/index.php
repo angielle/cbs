@@ -14,6 +14,7 @@
 
 <!-- Navigation -->
 <?php 
+	$page = 'home';
 	include '../includes/header_login.php'; 
 ?>
 

@@ -26,16 +26,16 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="<?= $home_class ?>">
           <a class="nav-link" href='<?= $home ?>'>Home</a>
         </li>
-        <li class="nav-item">
+        <li class="<?= $movies_class ?>">
           <a class="nav-link" href='<?= $movies ?>'>Movies</a>
         </li>
-        <li class="nav-item">
+        <li class="<?= $snacks_class ?>">
           <a class="nav-link" href='<?= $snacks ?>'>Snacks</a>
         </li>
-        <li class="nav-item">
+        <li class="<?= $about_class ?>">
           <a class="nav-link" href='<?= $about ?>'>About</a>
         </li>
       </ul>

@@ -130,29 +130,11 @@
 
 <body id="page-top">
   <div id="wrapper">
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-text mx-3">ADMIN</div>
-      </a>
-
-      <hr class="sidebar-divider my-0">
-      <li class="nav-item">
-        <a class="nav-link" href="../index.php">
-         <span>Users</span></a>
-      </li>
-
-      <li class="nav-item active">
-        <a class="nav-link" href="#">
-          <span>Movies</span></a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="../cinemas/cinemas.php">
-          <span>Cinemas</span></a>
-      </li>
-
-
-    </ul>
+    <!-- Menu -->
+    <?php 
+      $page = 'movies';
+      include '../../includes/menu.php'; 
+    ?>
 
     <div id="content-wrapper" class="d-flex flex-column">
       <div id="content">
@@ -212,7 +194,6 @@
                           $year = $row['year'];
                           $synopsis = $row['synopsis'];
                           $length = $row['length'];
-
                       ?>
                       <tbody>
                         <tr>

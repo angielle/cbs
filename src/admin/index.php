@@ -141,30 +141,11 @@
 <body id="page-top">
   
   <div id="wrapper">
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
-        <div class="sidebar-brand-text mx-3">ADMIN</div>
-      </a>
-
-      <hr class="sidebar-divider my-0">
-
-      <li class="nav-item active">
-        <a class="nav-link" href="#">
-         <span>Users</span></a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="movies/movies.php">
-          <span>Movies</span></a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="cinemas/cinemas.php">
-          <span>Cinemas</span></a>
-      </li>
-
-
-    </ul>
+    <!-- Menu -->
+    <?php 
+      $page = 'home';
+      include '../includes/menu.php'; 
+    ?>
 
     <div id="content-wrapper" class="d-flex flex-column">
       <div id="content">
