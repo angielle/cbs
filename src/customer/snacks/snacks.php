@@ -14,6 +14,7 @@
 
 <!-- Navigation -->
 <?php 
+	$page = 'snacks';
 	include '../../includes/header_login.php'; 
 ?>
   

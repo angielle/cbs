@@ -15,7 +15,7 @@
 <!-- Navigation -->
 <?php 
 	$page = 'movies';
-	include '../../includes/header_login.php'; 
+	include '../../includes/header.php'; 
 ?>
   
 <!--- Meet the team -->

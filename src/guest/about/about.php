@@ -14,8 +14,8 @@
 
 <!-- Navigation -->
 <?php 
-	$page = 'about';
-	include '../../includes/header_login.php'; 
+    $page = 'about';
+	include '../../includes/header.php'; 
 ?>
 
 <!--- Welcome Section -->

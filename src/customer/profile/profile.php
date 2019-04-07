@@ -15,6 +15,7 @@
 
 <!-- Navigation -->
 <?php 
+  $page = 'profile';
 	include '../../includes/header_login.php'; 
 ?>
 

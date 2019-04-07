@@ -12,7 +12,11 @@
 </head>
 
 <body>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/cbs/src/includes/header.php"; ?>
+
+<?php
+  $page = 'register';
+	include '../includes/header.php'; 
+?>
 
 <form class="modal-content"  method="POST" action="login_pr.php">
     <div class="imgcontainer">

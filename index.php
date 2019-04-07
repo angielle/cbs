@@ -14,6 +14,7 @@
 
 <!-- Navigation -->
 <?php 
+	$page = 'home';
 	include 'src/includes/header.php'; 
 ?>
 
@@ -101,7 +102,7 @@
 			<p>A wide variety to choose from</p>
 			
 			<br>
-			<a href="#" class="btn btn-primary">View Menu</a>
+			<a href="src/customer/snacks/snacks.php" class="btn btn-primary">View Menu</a>
 		</div>
 		<div class="col-lg-6">
 			<img src="assets/img/snack.png" class="img-fluid">
@@ -128,47 +129,40 @@
 	</div>
 </div>
 
+<?php 
+	$conn = mysqli_connect("localhost","root","");
+	$db = mysqli_select_db($conn, 'cbs');
+
+	$qry = "select * from movies limit 3";
+	$res = mysqli_query($conn, $qry);
+?>
+
+
 <!--- Cards -->
 <div class="container-fluid padding">
 	<div class="row padding">
+	  <?php 
+      while ($row = $res->fetch_assoc()) {
+        $name = $row['name'];
+        $genre = $row['genre'];
+        $year = $row['year'];
+        $synopsis = $row['synopsis'];
+        $length = $row['length'];
+    ?>
 		<div class="col-md-4">
 			<div class="card">
-				<img class="card-img-top" src="assets/img/pop1.png">
 				<div class="card-body">
-					<h4 class="card-title">Alita: Battle Angel</h4>
-					<p>Feb 06, 2019 | 2hrs 7mins</p>
-					<p class="card-text">A restored cyborg with a heart and soul of a young woman discovers with her caretaker that she is more than what she seems.</p>
-					<a href="#" class="btn btn-outline-primary">Buy</a>
+					<h4 class="card-title"><?php echo $name; ?></h4>
+					<p><?php echo $year ?> | <?php echo $length ?></p>
+					<p class="card-text"><?php echo $synopsis; ?></p>
+					<a href="#" class="btn btn-outline-primary">Book</a>
 					<a href="#" class="btn btn-outline-secondary">View Trailer</a>
 				</div>
 			</div>
 		</div>
-
-		<div class="col-md-4">
-			<div class="card">
-				<img class="card-img-top" src="assets/img/pop2.png">
-				<div class="card-body">
-					<h4 class="card-title">Alone/Together</h4>
-					<p>Feb 13, 2019 | 1hrs 40mins</p>
-					<p class="card-text">Christine an Art Studies major student at University of the Philippines Diliman a smart and very ambitious who is in a relationship with a Biology student at University of Santo Tomas, Raf a very total opposite character of Christine.</p>
-					<a href="#" class="btn btn-outline-primary">Buy</a>
-					<a href="#" class="btn btn-outline-secondary">View Trailer</a>
-				</div>
-			</div>
-		</div>
-
-		<div class="col-md-4">
-			<div class="card">
-				<img class="card-img-top" src="assets/img/pop3.png">
-				<div class="card-body">
-					<h4 class="card-title">How to Train Your Dragon: The Hidden World</h4>
-					<p>Feb 20, 2019 | 1hrs 52mins</p>
-					<p class="card-text">Now chief and ruler of Berk alongside Astrid, Hiccup has created a gloriously chaotic dragon utopia, but the sudden appearance of female Light Fury coincides with the darkest threat their village has ever faced.</p>
-					<a href="#" class="btn btn-outline-primary">Buy</a>
-					<a href="#" class="btn btn-outline-secondary">View Trailer</a>
-				</div>
-			</div>
-		</div>
+    <?php 
+      }
+    ?>
 	</div>
 </div>
 

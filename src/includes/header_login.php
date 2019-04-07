@@ -3,13 +3,19 @@
     session_start();
     define( 'SCRIPT_ROOT', 'http://localhost/cbs/' );
     $logo = SCRIPT_ROOT . "assets/img/logo.png"; 
+
     $home = SCRIPT_ROOT . "src/customer/index.php"; 
     $movies = SCRIPT_ROOT . "src/customer/movies/movies.php";
     $snacks = SCRIPT_ROOT . "src/customer/snacks/snacks.php";
     $about =  SCRIPT_ROOT . "src/customer/about/about.php";
     $profile =  SCRIPT_ROOT . "src/customer/profile/profile.php";
 
-  ?>
+    $home_class = ($page == 'home') ? 'nav-item active' : 'nav-item';
+    $movies_class = ($page == 'movies') ? 'nav-item active' : 'nav-item';
+    $snacks_class = ($page == 'snacks') ? 'nav-item active' : 'nav-item';
+    $about_class = ($page == 'about') ? 'nav-item active' : 'nav-item';
+    $profile_class = ($page == 'profile') ? 'nav-item active' : 'nav-item';
+  ?>  
 
   <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
   <div class="container-fluid">

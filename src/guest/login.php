@@ -12,7 +12,10 @@
 </head>
 
 <body>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/cbs/src/includes/header.php"; ?>
+<?php 
+	$page = 'login';
+	include '../includes/header.php'; 
+?>
 
 <form class="modal-content"  method="POST" action="login_pr.php">
     <div class="imgcontainer">
@@ -29,7 +32,7 @@
       	<?php 
       		if(!isset($_SESSION)) { 
 		        session_start(); 
-		    } 
+		      } 
       		if (!empty($_SESSION['error'])){
 	          echo '<div class="alert alert-danger text-center p-1" role="alert">';
 	          echo $_SESSION['error'];
