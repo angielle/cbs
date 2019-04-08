@@ -33,9 +33,4 @@
       <span>Cinemas</span></a>
   </li>
 
-  <li class="<?= $showing_class ?>">
-    <a class="nav-link" href="<?= $showing ?>">
-      <span>Showing</span></a>
-  </li>
-
 </ul>
