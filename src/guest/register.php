@@ -18,7 +18,7 @@
 	include '../includes/header.php'; 
 ?>
 
-<form class="modal-content"  method="POST" action="login_pr.php">
+<form class="modal-content"  method="POST" action="register_pr.php">
     <div class="imgcontainer">
       <img src="../../assets/img/logo.png" alt="logo" class="logo">
       <h1 style="text-align:center">Register</h1>
@@ -31,21 +31,18 @@
       <input type="text" placeholder="Contact Number" name="contact-no">
       <input type="email" placeholder="E-mail Address" name="email">  
       <input type="password" placeholder="Password" name="password">   
-      <input type="password" placeholder="Confirm Password" name="confirm-password">     
       <button class="modal-btn" type="submit" name="submit" value="signup">Register</button>
       <?php 
-	      if (!empty($_SESSION['error'])){
-	        echo '<div class="alert alert-danger text-center p-1" role="alert">';
-	        echo $_SESSION['error'];
-	        
-	        if ($_SESSION['error'] == 'Incorrect password') {
-	          echo '<br/>';
-	          echo $_SESSION['retries'] . ' retries left';
-	        }
-	        echo '</div>';
-	        unset($_SESSION['error']);
-	        unset($_SESSION['retries']);
-	      }
+        if(!isset($_SESSION)) { 
+          session_start(); 
+        } 
+        if (!empty($_SESSION['error'])){
+          echo '<div class="alert alert-danger text-center p-1" role="alert">';
+          echo $_SESSION['error'];
+          echo '</div>';
+          unset($_SESSION['error']);
+          
+        }
       ?> 
     </div>
   </form>
